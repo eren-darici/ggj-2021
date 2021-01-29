@@ -13,11 +13,23 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     private RoomTemplates templates;
     public bool spawned = false;
+    public int maxRoom = 10;
+
+    GameObject[] rooms;
+
+    int numberOfRooms;
 
     void Start()
     {
+        rooms = GameObject.FindGameObjectsWithTag("Room");
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.1f);
+    }
+
+    void Update()
+    {
+        numberOfRooms = rooms.Length;
+        Debug.Log(numberOfRooms);
     }
 
     void Spawn()
@@ -51,6 +63,7 @@ public class RoomSpawner : MonoBehaviour
             spawned = true;
         }
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
