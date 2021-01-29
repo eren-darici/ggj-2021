@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
+  spriteRenderer: {fileID: 0}
+  direction: 0
 --- !u!50 &-1511209962711715103
 Rigidbody2D:
   serializedVersion: 4
@@ -159,6 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63070eac4b16a0c46a38febe1c28cf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  firepoint: {fileID: 0}
+  projectileSpeed: 0
 --- !u!1 &8193466044126557274
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8193466044126557274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14, y: -0.43, z: 0}
+  m_LocalPosition: {x: -0.044, y: -0.412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3271228228981595286}

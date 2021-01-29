@@ -9,6 +9,9 @@ TagManager:
   - Room
   - Wall
   - Projectile
+  - Enemy
+  - Door
+  - DoorTrigger
   layers:
   - Default
   - TransparentFX
