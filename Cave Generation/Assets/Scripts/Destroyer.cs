@@ -6,9 +6,9 @@ public class Destroyer : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Player")
+        if (other.tag != "Player" && other.tag != "Projectile")
         {
-            Debug.Log(other.name);
+            Debug.Log(other.tag);
             Destroy(other.gameObject);
         }
     }
