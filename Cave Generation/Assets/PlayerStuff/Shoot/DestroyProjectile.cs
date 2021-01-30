@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyProjectile : MonoBehaviour
 {
     public int hitpoint = 10;
-    int enemyHP;
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +15,7 @@ public class DestroyProjectile : MonoBehaviour
         }
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyHealth>().health -= hitpoint;
+            other.GetComponent<EnemyHP>().hp -= hitpoint;
             Destroy(gameObject);
         }
     }

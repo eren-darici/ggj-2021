@@ -15,8 +15,8 @@ public class Shoot : MonoBehaviour
     public bool isDash;
     Rigidbody2D rb;
     public int maxHP;
-    [SerializeField]
-    private int hitpoints;
+
+    public int hitpoints;
 
     void Start()
     {
