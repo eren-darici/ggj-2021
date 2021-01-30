@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - Door
   - DoorTrigger
+  - Menu
+  - Level01
   layers:
   - Default
   - TransparentFX
