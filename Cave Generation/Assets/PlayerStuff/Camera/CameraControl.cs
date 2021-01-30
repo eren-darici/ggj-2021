@@ -16,7 +16,6 @@ public class CameraControl : MonoBehaviour
     {
         if (other.tag == "Room")
         {
-            Debug.Log("hit");
             mainCamera.target = other.transform;
         }
     }

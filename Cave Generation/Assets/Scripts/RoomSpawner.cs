@@ -29,7 +29,7 @@ public class RoomSpawner : MonoBehaviour
     void Update()
     {
         numberOfRooms = rooms.Length;
-        Debug.Log(numberOfRooms);
+       // Debug.Log(numberOfRooms);
     }
 
     void Spawn()
@@ -69,7 +69,9 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
-            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            RoomSpawner instance;  
+            if(other.TryGetComponent<RoomSpawner>(out instance))
+            if (instance.spawned == false && spawned == false)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);

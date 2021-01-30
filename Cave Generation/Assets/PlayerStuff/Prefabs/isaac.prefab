@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1511209962711715103}
   - component: {fileID: 3344107648162901231}
   - component: {fileID: 685998120215436192}
+  - component: {fileID: 1858725806175708142}
   m_Layer: 0
   m_Name: isaac
   m_TagString: Untagged
@@ -99,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6c35aef2017894a9cd325207b69c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
-  spriteRenderer: {fileID: 0}
+  movementSpeed: 5
+  spriteRenderer: {fileID: 5716083925912774196}
   direction: 0
+  playerInput: {x: 0, y: 0, z: 0}
 --- !u!50 &-1511209962711715103
 Rigidbody2D:
   serializedVersion: 4
@@ -161,9 +163,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63070eac4b16a0c46a38febe1c28cf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  firepoint: {fileID: 0}
-  projectileSpeed: 0
+  projectile: {fileID: 3257628164617986558, guid: 99ecfedd621e2d5479f7e59b9dad972b,
+    type: 3}
+  firepoint: {fileID: 8193466044126557274}
+  projectileSpeed: 15
+--- !u!114 &1858725806175708142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809659020863977541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f89d7402d09ad4dab7833597fc1f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  EntryRoom: {fileID: 0}
 --- !u!1 &8193466044126557274
 GameObject:
   m_ObjectHideFlags: 0

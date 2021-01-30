@@ -7,26 +7,45 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public SpriteRenderer spriteRenderer;
     public int direction;
+    public Vector3 playerInput;
+    Vector3 moveDir;
+    private Rigidbody2D rb;
     // 1 -> left
     // 2 -> right
     // 3 -> up
     // 4 -> down
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Update() 
     {
-        Move();
+       
+        
+        
+      
     }
 
     void Move()
     {
-        Vector3 playerInput = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+         playerInput= new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
 
         ChangeDirection();
         
         playerInput = Vector3.ClampMagnitude(playerInput, 1f);
-        transform.position += playerInput * movementSpeed * Time.deltaTime;
+        moveDir = playerInput;
+        
     }
 
+    private void FixedUpdate()
+    {
+
+        Move();
+        
+        
+        rb.velocity = moveDir * movementSpeed;
+    }
     void ChangeDirection()
     {
         if (Input.GetAxis("Horizontal") > 0)
@@ -51,4 +70,7 @@ public class PlayerMovement : MonoBehaviour
             direction = 4;
         }
     }
+
+
+
 }
