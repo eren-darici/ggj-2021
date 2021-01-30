@@ -12,12 +12,16 @@ public class EnemyGFX : MonoBehaviour
     public Camera cam;
     public GameObject spawner;
 
+    public Animator animator;
+
     public Transform currentRoom;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         startPos = spawner.transform;
+
+        animator = GetComponent<Animator>();
 
         cam = Camera.main;
         currentRoom = transform.parent.parent;
@@ -36,7 +40,7 @@ public class EnemyGFX : MonoBehaviour
         {
             aiPath.canMove = false;
         }
-        else
+        else 
         {
             aiPath.canMove = true;
         }
@@ -47,20 +51,17 @@ public class EnemyGFX : MonoBehaviour
     {
         if (aiPath.desiredVelocity.x >= 0.01f)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            animator.SetTrigger("Right");
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (aiPath.desiredVelocity.x <= -0.01f)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            animator.SetTrigger("Left");
+            GetComponent<SpriteRenderer>().flipX = true;
         }
-
-        if (aiPath.desiredVelocity.y >= 0.1f)
+        else
         {
-            // arkayı renderla
-        }
-        else if (aiPath.desiredVelocity.y <= 1.0f)
-        {
-            // önü renderla
+            animator.SetTrigger("Down");
         }
     }
     

@@ -14,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     // 2 -> right
     // 3 -> up
     // 4 -> down
+    Shoot sc;
 
     private void Start()
     {
+        sc = GetComponent<Shoot>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update() 
@@ -42,9 +44,10 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Move();
-        
-        
-        rb.velocity = moveDir * movementSpeed;
+        if (!sc.isDash)
+        {
+            rb.velocity = moveDir * movementSpeed;
+        }
     }
     void ChangeDirection()
     {

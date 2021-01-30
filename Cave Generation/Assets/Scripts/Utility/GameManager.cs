@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     GameObject doorTrigger;
     GameObject player;
+    public LayerMask obstacleLayer;
 
     void Awake()
     {
