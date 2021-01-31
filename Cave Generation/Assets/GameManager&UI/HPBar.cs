@@ -7,7 +7,6 @@ public class HPBar : MonoBehaviour
 {
     public Shoot playerScript;
     public GameObject player;
-    public GameObject bar;
     public int playerHP;
 
     [Header("HP Sprites")]
@@ -38,31 +37,31 @@ public class HPBar : MonoBehaviour
     {
         if (playerHP == 7)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp7;
+            this.GetComponent<UnityEngine.UI.Image>().sprite = hp7;
         }
         else if (playerHP == 6)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp6;
+            this.GetComponent<UnityEngine.UI.Image>().sprite = hp6;
         }
         else if (playerHP == 5)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp5;
+            this.GetComponent<UnityEngine.UI.Image>().sprite = hp5;
         }
         else if (playerHP == 4)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp4;
+            GetComponent<UnityEngine.UI.Image>().sprite = hp4;
         }
         else if (playerHP == 3)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp3;
+            GetComponent<UnityEngine.UI.Image>().sprite = hp3;
         }
         else if (playerHP == 2)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp2;
+            GetComponent<UnityEngine.UI.Image>().sprite = hp2;
         }
         else if (playerHP == 1)
         {
-            bar.GetComponent<UnityEngine.UI.Image>().sprite = hp1;
+            GetComponent<UnityEngine.UI.Image>().sprite = hp1;
         }
         else if (playerHP == 0)
         {

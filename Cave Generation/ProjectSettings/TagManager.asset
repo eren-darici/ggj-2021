@@ -15,6 +15,9 @@ TagManager:
   - Menu
   - Level01
   - Spawner
+  - Boss
+  - Cutscene
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -18,5 +18,10 @@ public class DestroyProjectile : MonoBehaviour
             other.GetComponent<EnemyHP>().hp -= hitpoint;
             Destroy(gameObject);
         }
+        if (other.CompareTag("Boss"))
+        {
+            other.GetComponent<BossRoom>().Damage(hitpoint); ;
+            Destroy(gameObject);
+        }
     }
 }

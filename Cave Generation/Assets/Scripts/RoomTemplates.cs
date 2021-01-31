@@ -26,8 +26,9 @@ public class RoomTemplates : MonoBehaviour
             {
                 if (i == rooms.Count - 1)
                 {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                    BossRoom bossroom = Instantiate(boss, rooms[i].transform.position, Quaternion.identity).GetComponent<BossRoom>();
                     spawnedBoss = true;
+                    bossroom.currentRoom = rooms[i].transform;
                 }
             }
         }
