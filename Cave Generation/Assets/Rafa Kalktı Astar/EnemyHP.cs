@@ -6,6 +6,7 @@ public class EnemyHP : MonoBehaviour
 {
     public int hp;
     GameObject par;
+    public GameObject blood;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class EnemyHP : MonoBehaviour
         if (hp <= 0)
         {
             transform.parent = null;
+            Instantiate(blood, transform.position, Quaternion.identity);
             Destroy(par);
             Destroy(this.gameObject);
         }

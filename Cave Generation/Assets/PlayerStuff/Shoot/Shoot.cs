@@ -15,6 +15,7 @@ public class Shoot : MonoBehaviour
     public bool isDash;
     Rigidbody2D rb;
     public int maxHP;
+    public GameObject fireParticle;
 
     public int hitpoints;
 
@@ -31,6 +32,8 @@ public class Shoot : MonoBehaviour
     {
         direction = ShootDirection();
         Fire();
+        firepoint.transform.position = transform.position + direction / 2;
+        firepoint.transform.rotation = Quaternion.Euler(0, 0, -90 + Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
     private void FixedUpdate()
     {
@@ -45,11 +48,10 @@ public class Shoot : MonoBehaviour
 
             GameObject projectileInstance = Instantiate(projectile);
             projectileInstance.transform.position = firepoint.transform.position;
-            float angle = Mathf.Rad2Deg* Mathf.Atan2(direction.y, direction.x);
 
+            float angle = Mathf.Rad2Deg* Mathf.Atan2(direction.y, direction.x);
             projectileInstance.transform.rotation = Quaternion.Euler(0,0,angle);
             projectileInstance.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
-            Debug.Log(projectileInstance.GetComponent<Rigidbody2D>().velocity);
         }
         
     }
@@ -57,7 +59,7 @@ public class Shoot : MonoBehaviour
     {
         if (playerMovement.playerInput.x != 0 || playerMovement.playerInput.y != 0)
         {   
-            return playerMovement.playerInput.normalized;
+            return playerMovement.playerInput;
         }
         else return direction;
     }
@@ -87,6 +89,7 @@ public class Shoot : MonoBehaviour
     void Die()
     {
         Debug.Log("DEAD");
+        // gameObject.SetActive(false);
     }
 
     void Heal()

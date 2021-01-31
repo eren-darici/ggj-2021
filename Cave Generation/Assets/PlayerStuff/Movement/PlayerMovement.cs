@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Animator animator;
     public float movementSpeed;
     public SpriteRenderer spriteRenderer;
     public int direction;
@@ -20,24 +21,18 @@ public class PlayerMovement : MonoBehaviour
     {
         sc = GetComponent<Shoot>();
         rb = GetComponent<Rigidbody2D>();
-    }
-    void Update() 
-    {
-       
-        
-        
-      
+        animator = GetComponent<Animator>();
     }
 
     void Move()
     {
-         playerInput= new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+         playerInput= new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
 
         ChangeDirection();
         
         playerInput = Vector3.ClampMagnitude(playerInput, 1f);
         moveDir = playerInput;
-        
+
     }
 
     private void FixedUpdate()
@@ -51,28 +46,28 @@ public class PlayerMovement : MonoBehaviour
     }
     void ChangeDirection()
     {
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            spriteRenderer.flipX = false;
-            direction = 2;
-  
+            // spriteRenderer.flipX = false;
+            direction = 2;  
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            spriteRenderer.flipX = true;
+            // spriteRenderer.flipX = true;
             direction = 1;
         }
 
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
             direction = 3;
             
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (Input.GetAxisRaw("Vertical") < 0)
         {
             direction = 4;
         }
     }
+
 
 
 
