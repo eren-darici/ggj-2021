@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
     public int maxHP;
     public GameObject fireParticle;
 
+    public AudioSource source;
+
     public int hitpoints;
 
     void Start()
@@ -45,7 +47,7 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            source.Play();
             GameObject projectileInstance = Instantiate(projectile);
             projectileInstance.transform.position = firepoint.transform.position;
 
