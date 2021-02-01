@@ -3,13 +3,20 @@
 
 ##### Fun Dungeon Crawler with simple gameplay mechanics.
 ##### Procedural Map Generate tech demo.
-### How to play?
-#### WASD to Move
-#### Arrow Keys to Shoot
-#### Shift to Dash
-#### Use the mini arrow at the bottom of the screen to find boss.
+### Team:
+* @eren-darici
+* @omerakcali
+* @DerekDincer
 
-### Game Design: @eren-darici
-### Gameplay Programming: @eren-darici & @omerakcali
-### Artist: @DerekDincer
+### How to play?
+ * WASD to Move
+ * Arrow Keys to Shoot
+ * Shift to Dash
+ * Use the mini arrow at the bottom of the screen to find boss.
+
+### Roles of the Team
+**Game Design:** @eren-darici \
+**Gameplay Programming:** @eren-darici & @omerakcali \
+**Artist:** @DerekDincer 
+
 ### GGJ2021: https://globalgamejam.org/2021/games/piece-wise-3
